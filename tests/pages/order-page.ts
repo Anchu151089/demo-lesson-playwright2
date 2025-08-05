@@ -15,7 +15,7 @@ export class OrderPage extends BasePage {
   }
   async fillOrderIdAndSearch(orderId: string) {
     await this.statusButton.click()
-    await this.fillElement(this.searchOrderInput, '999')
+    await this.fillElement(this.searchOrderInput, orderId)
     await this.clickElement(this.trackButton)
     return new OrderNotFoundPage(this.page)
   }
